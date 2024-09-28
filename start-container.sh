@@ -11,10 +11,11 @@ docker run -itd \
                 --name hadoop-master \
                 --hostname hadoop-master \
                 kiwenlau/hadoop:1.0 &> /dev/null
+
 # start hadoop slave container
 i=1
 while [ $i -lt $N ]
-do
+    do
     docker rm -f hadoop-slave$i &> /dev/null
     echo "start hadoop-slave$i container..."
     docker run -itd \
